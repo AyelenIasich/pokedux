@@ -3,7 +3,6 @@ import { CiStar } from "react-icons/ci";
 import "./styles.css";
 
 function Card({ name, image, abilities, onShowAbilities }) {
-
   return (
     <div className="bg-white  rounded-lg shadow-md">
       <div className="flex justify-between items-center">
