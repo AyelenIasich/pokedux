@@ -6,7 +6,10 @@ import { legacy_createStore as createStore } from "redux";
 import App from "./App/App.jsx";
 import "./index.css";
 
-const store = createStore(pokemonsReducer);
+const store = createStore(
+  pokemonsReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
