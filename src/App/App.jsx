@@ -5,10 +5,12 @@ import Searcher from "../Components/Searcher";
 import Header from "../Components/Header";
 import PokemonList from "../Components/PokemonList.jsx";
 import { getPokemonWithDetails } from "../actions/index.js";
+import CardSkeleton from "../Components/CardSkeleton/index.jsx";
 import "./App.css";
 
 function App() {
   const pokemons = useSelector((state) => state.pokemons);
+  const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +25,15 @@ function App() {
     <div>
       <Header />
       <Searcher />
-      <PokemonList pokemons={pokemons} />
+      <PokemonList
+        pokemons={pokemons}
+        loading={loading}
+        onLoading={() =>
+          Array.from({ length: 8 }).map((_, index) => (
+            <CardSkeleton key={index} />
+          ))
+        }
+      />
     </div>
   );
 }

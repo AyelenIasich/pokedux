@@ -1,8 +1,9 @@
-import { SET_POKEMONS } from "../actions/types";
+import { SET_LOADING, SET_POKEMONS } from "../actions/types";
 
 // Initial state of the reducer
 const initialState = {
   pokemons: [],
+  loading: true,
 };
 
 // Reducer using a switch statement
@@ -24,5 +25,6 @@ export const pokemonsReducer = (state = initialState , action)=>{
 };
 
 const reducerObject = (state, payload) =>({
-  [SET_POKEMONS] : { ...state, pokemons: payload}
+  [SET_POKEMONS] : { ...state, pokemons: payload},
+  [SET_LOADING] : { ...state, loading: payload}
 })

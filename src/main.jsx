@@ -8,8 +8,8 @@ import {
   legacy_createStore as createStore,
 } from "redux";
 import { thunk } from "redux-thunk";
-import App from "./App/App.jsx";
 import { logger } from "./middlewares/index.js";
+import App from "./App/App.jsx";
 import "./index.css";
 
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
