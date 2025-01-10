@@ -6,6 +6,10 @@ const initialState = {
   loading: true,
 };
 
+// const initialState = fromJS({
+//   pokemons: [],
+//   loading: true,
+// });
 // Reducer using a switch statement
 // Handles actions based on their type
 export const pokemonsReducer1 = (state = initialState, action) => {

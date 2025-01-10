@@ -13,13 +13,13 @@ function Card({
   onFavorite,
 }) {
   return (
-    <div className="bg-white  rounded-lg shadow-md">
+    <div className="rounded-lg shadow-md card-glass">
       <div className="flex justify-between items-center">
-        <p className="px-3 font-medium text-lg">{name}</p>
+        <p className="px-3 font-medium text-lg capitalize  ">{name}</p>
         <FavoriteButton isFavorite={isFavorite} onClick={onFavorite} />
       </div>
       <figure className="w-full relative">
-        <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg texte-black text-xs m-2 px-2 py-1">
+        <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg texte-black text-xs m-2 px-2 py-1 text-black">
           {types?.length > 0 && onShowTypes()}
         </span>
         <img

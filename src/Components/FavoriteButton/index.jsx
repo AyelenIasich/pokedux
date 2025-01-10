@@ -6,11 +6,11 @@ function FavoriteButton({ isFavorite, onClick }) {
   const icon = isFavorite ? (
     <FaStar className="h-6 w-6 text-yellow-500" />
   ) : (
-    <CiStar className="h-6 w-6 text-slate-600" />
+    <CiStar className="h-6 w-6 text-white" />
   );
 
   return (
-    <div className="border rounded-lg p-2 cursor-pointer" onClick={onClick}>
+    <div className="border-none rounded-lg p-2 cursor-pointer" onClick={onClick}>
       {icon}
     </div>
   );

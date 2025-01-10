@@ -2,7 +2,7 @@ import React from 'react'
 
 function CardSkeleton() {
   return (
-    <div className="bg-white w-56 h-60 rounded-lg shadow-md animate-pulse">
+    <div className="bg-white w-70 h-80 rounded-lg shadow-md animate-pulse">
     <figure className="relative mb-2 w-full h-4/5 bg-gray-200 rounded-lg">
       <div className="absolute bottom-0 left-0 bg-gray-300 rounded-lg w-16 h-4 m-2"></div>
       <div className="absolute top-0 right-0 bg-gray-300 rounded-full h-6 w-6 m-2"></div>

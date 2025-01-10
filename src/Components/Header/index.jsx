@@ -11,7 +11,7 @@ function Header() {
             alt="Pokedux logo"
           />
         </figure>
-        <h1 className="font-bold px-3 text-2xl text-pokemonRed">POKEDUX</h1>
+        <h1 className="font-bold px-3 text-3xl text-pokemonRed">POKEDUX</h1>
       </div>
   );
 }
