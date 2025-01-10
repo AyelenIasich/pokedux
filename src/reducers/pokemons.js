@@ -1,4 +1,4 @@
-import { SET_LOADING, SET_POKEMONS } from "../actions/types";
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS } from "../actions/types";
 
 // Initial state of the reducer
 const initialState = {
@@ -20,11 +20,20 @@ export const pokemonsReducer1 = (state = initialState, action) => {
 
 // Reducer using an object-based approach
 // Dynamically maps actions to state updates
-export const pokemonsReducer = (state = initialState , action)=>{
+
+export const pokemonsReducer = (state = initialState, action) => {
   return reducerObject(state, action.payload)[action.type] || state;
 };
 
-const reducerObject = (state, payload) =>({
-  [SET_POKEMONS] : { ...state, pokemons: payload},
-  [SET_LOADING] : { ...state, loading: payload}
-})
+const reducerObject = (state, payload) => ({
+  [SET_POKEMONS]: { ...state, pokemons: payload },
+  [SET_LOADING]: { ...state, loading: payload },
+  [SET_FAVORITE]: {
+    ...state,
+    pokemons: state.pokemons.map((pokemon) =>
+      pokemon.id === payload
+        ? { ...pokemon, favorite: !pokemon.favorite }
+        : pokemon
+    ),
+  },
+});

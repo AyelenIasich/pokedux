@@ -1,5 +1,5 @@
 // actions creators
-import { SET_LOADING, SET_POKEMONS } from "./types";
+import { SET_LOADING, SET_POKEMONS, SET_FAVORITE } from "./types";
 import { getPokemonDetails } from "../api/index.js";
 
 export const setPokemons = (payload) => ({
@@ -24,3 +24,9 @@ export const setLoading = (payload) => ({
   type: SET_LOADING,
   payload,
 });
+
+export const setFavorite = (payload) => ({
+  type: SET_FAVORITE,
+  payload,
+});
+
