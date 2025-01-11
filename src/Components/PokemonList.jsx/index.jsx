@@ -1,6 +1,6 @@
 import React from "react";
+import { setFavorite } from "../../slices/dataSlice";
 import { useDispatch } from "react-redux";
-import { setFavorite } from "../../actions/index.js";
 import Card from "../Card";
 
 function PokemonList({ pokemons, loading, onLoading }) {

@@ -1,26 +1,20 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { getPokemon } from "../api/index.js";
 import Searcher from "../Components/Searcher";
 import Header from "../Components/Header";
 import PokemonList from "../Components/PokemonList.jsx";
-import { getPokemonWithDetails } from "../actions/index.js";
 import CardSkeleton from "../Components/CardSkeleton/index.jsx";
+import { fetchPokemonsWithDetails } from "../slices/dataSlice.js";
 import "./App.css";
 
 function App() {
-  const pokemons = useSelector((state) => state.getIn(["data", "pokemons"], shallowEqual)).toJS();
-  // const pokemonsImmutable = useSelector((state) => state.getIn(["data", "pokemons"]));
-  // const pokemons2 = useMemo(() => pokemonsImmutable.toJS(), [pokemonsImmutable]);
-  const loading = useSelector((state) => state.getIn(["ui", "loading"]));
+  const pokemons = useSelector((state) => state.data.pokemons, shallowEqual);
+  const loading = useSelector((state) => state.ui.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchPokemon = async () => {
-      const pokemonsRes = await getPokemon();
-      dispatch(getPokemonWithDetails(pokemonsRes));
-    };
-    fetchPokemon();
+    console.log("Fetching pokemons...");
+    dispatch(fetchPokemonsWithDetails());
   }, []);
 
   return (

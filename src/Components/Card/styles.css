@@ -15,3 +15,68 @@
 .card-glass:hover {
   transform: scale(1.05);
 }
+
+.pokemon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  z-index: 0;
+  filter: blur(15px);
+}
+
+.pokemon-img {
+  z-index: 1;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  background: radial-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+}
+
+.pokemon.electric img {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8))
+    drop-shadow(0 0 20px rgba(255, 255, 0, 0.5));
+}
+
+.pokemon.grass img {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.8))
+    drop-shadow(0 0 20px rgba(0, 255, 0, 0.5));
+}
+
+.pokemon.fire img {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8))
+    drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+}
+
+.pokemon.water img {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 255, 0.8))
+    drop-shadow(0 0 20px rgba(0, 0, 255, 0.5));
+}
+
+.pokemon.psychic img {
+  filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.8))
+    drop-shadow(0 0 20px rgba(255, 20, 147, 0.5));
+}
+
+.pokemon.ground img {
+  filter: drop-shadow(0 0 10px rgba(139, 69, 19, 0.8))
+    drop-shadow(0 0 20px rgba(139, 69, 19, 0.5));
+}
+
+.pokemon.flying img {
+  filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.8))
+    drop-shadow(0 0 20px rgba(192, 192, 192, 0.5));
+}
+
+.pokemon.poison img {
+  filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.8))
+    drop-shadow(0 0 20px rgba(138, 43, 226, 0.5));
+}
+
+.pokemon.dragon img {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))
+          drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+}
