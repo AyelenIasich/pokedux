@@ -10,7 +10,6 @@ const initialState = {
 export const fetchPokemonsWithDetails = createAsyncThunk(
   "data/fetchPokemonsWithDetails",
   async (_, { dispatch }) => {
-    dispatch(setLoading(true));
     const pokemonsRes = await getPokemon();
     const pokemonsDetailed = await Promise.all(
       pokemonsRes.map((pokemon) => getPokemonDetails(pokemon))

@@ -15,7 +15,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Fetching pokemons...");
     dispatch(fetchPokemonsWithDetails());
   }, []);
 
